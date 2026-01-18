@@ -11,3 +11,4 @@ gradio
 pandas
 scikit-learn
 pydantic
+lxml_html_clean
