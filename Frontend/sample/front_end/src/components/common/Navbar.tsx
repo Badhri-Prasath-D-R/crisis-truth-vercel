@@ -122,9 +122,6 @@ const EnhancedNavbar = () => {
 
             {/* RIGHT ICONS */}
             <div className="flex items-center gap-2">
-              <button onClick={() => setIsDarkMode(!isDarkMode)}>
-                {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
 
               <button className="relative">
                 <Bell size={18} />
