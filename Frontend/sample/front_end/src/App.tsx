@@ -1,32 +1,23 @@
-import { BrowserRouter } from "react-router-dom";
-import Navbar from "./components/common/Navbar";
-import Sidebar from "./components/common/Sidebar";
-import Footer from "./components/common/Footer";
-import AppRoutes from "./routes";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "../../front_end/src/components/layout/Layout";
+import Dashboard from "../../front_end/src/components/pages/Dashboard";
+import FakeNews from "../../front_end/src/components/pages/FakeNews";
+import RealNews from "../../front_end/src/components/pages/RealNews";
+import Chatbot from "../../front_end/src/components/pages/ChatbotPage";
 
-const App = () => {
+function App() {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-gray-50">
-        {/* Top Navigation */}
-        <Navbar />
-
-        {/* Main Layout */}
-        <div className="flex">
-          {/* Sidebar */}
-          <Sidebar />
-
-          {/* Page Content */}
-          <main className="flex-1 p-6">
-            <AppRoutes />
-          </main>
-        </div>
-
-        {/* Footer */}
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/fake-news" element={<FakeNews />} />
+          <Route path="/real-news" element={<RealNews />} />
+          <Route path="/chatbot" element={<Chatbot />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
-};
+}
 
 export default App;
